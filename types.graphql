@@ -9,3 +9,7 @@ type Query {
   products: [Product]
   getProductById(id: ID!): [Product]
 }
+
+type Mutation {
+  addProduct(name: String!, url: String!, tags: [String]): [Product]
+}

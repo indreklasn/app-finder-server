@@ -1,7 +1,9 @@
 import { ApolloServer } from 'apollo-server-express';
 import express from 'express';
+import { initDB } from './src/config'
 import Schema from './schema'
 
+initDB()
 const app = express()
 const PORT = 4000;
 
