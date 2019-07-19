@@ -13,14 +13,7 @@ const products = [
 const resolvers = {
   Query: {
     products: () => products,
-    getProductById(parent, args, context, info) { 
-      return products.filter(product => {
-        console.log(product.id)
-        console.log(args.id)
-        return product.id === args.id
-        
-      })
-    }
+    getProductById: (parent, args) => products.filter(product => product.id === args.id)
   },
 };
 
