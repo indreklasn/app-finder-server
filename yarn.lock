@@ -2196,6 +2196,11 @@ graphql-extensions@0.8.0:
     apollo-server-env "2.4.0"
     apollo-server-types "0.2.0"
 
+graphql-import-node@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/graphql-import-node/-/graphql-import-node-0.0.4.tgz#0522f058978c7e1b99d1e6be1b851ee17007b111"
+  integrity sha512-okpdABQIgIM0qdx9Mfgdu6fTsFEazZmHZdEU34cijkUj9D1db1SyPRGHPxbXmbacamhEF41ckxpCAgHiGliryQ==
+
 graphql-import@^0.7.1:
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/graphql-import/-/graphql-import-0.7.1.tgz#4add8d91a5f752d764b0a4a7a461fcd93136f223"
