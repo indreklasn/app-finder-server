@@ -3,6 +3,10 @@ import express from 'express';
 import { initDB } from './src/config'
 import Schema from './schema'
 
+import dotenv from 'dotenv';
+
+dotenv.config()
+
 initDB()
 const app = express()
 const PORT = 4000;
