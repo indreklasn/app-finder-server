@@ -1,15 +1,14 @@
-const { ApolloServer } = require('apollo-server-express');
-const express = require('express');
-import { typeDefs, resolvers } from './schema';
+import { ApolloServer } from 'apollo-server-express';
+import express from 'express';
+import Schema from './schema'
 
 const app = express()
 const PORT = 4000;
 
 
 const server = new ApolloServer({
-  // These will be defined for both new or existing servers
-  typeDefs,
-  resolvers,
+  schema: Schema,
+  playground: true,
 });
 
 

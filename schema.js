@@ -1,4 +1,5 @@
-const { gql } = require('apollo-server-express');
+import { gql, makeExecutableSchema } from 'apollo-server-express';
+// import  ProductTypeDef from './src/types/product'
 
 
 // Type definitions define the "shape" of your data and specify
@@ -12,10 +13,18 @@ const typeDefs = gql`
     author: String
   }
 
+  type Product {
+    id: ID!
+    name: String
+    url: String!
+    tags: [String]
+  }
+
   # The "Query" type is the root of all GraphQL queries.
   # (A "Mutation" type will be covered later on.)
   type Query {
     books: [Book]
+    products: [Product]
   }
 `;
 
@@ -35,12 +44,21 @@ const books = [
   },
 ];
 
+const products = [
+  {
+    name: 'hello product'
+  }
+]
+
 // Resolvers define the technique for fetching the types in the
 // schema.  We'll retrieve books from the "books" array above.
 const resolvers = {
   Query: {
     books: () => books,
+    products: () => products
   },
 };
 
-export { typeDefs, resolvers };
+const Schema = makeExecutableSchema({ typeDefs, resolvers })
+
+export default Schema;
