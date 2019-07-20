@@ -1,6 +1,6 @@
 type Mutation {
   addProduct(input: AddProductInput!): Product
-  removeProduct(input: RemoveProductInput!): [Product]
+  removeProduct(input: RemoveProductInput!): RemoveProductOutput
 }
 
 type Query {
@@ -29,4 +29,8 @@ input AddProductInput {
 
 input RemoveProductInput {
   id: ID!
+}
+
+type RemoveProductOutput {
+  status: Float
 }

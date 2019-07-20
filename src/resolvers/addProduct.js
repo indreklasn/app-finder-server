@@ -1,7 +1,6 @@
 import {Product} from './../models'
 
 export default async (parent, args) => {
-  console.log(args)
   const newProduct = new Product({
     name: args.input.name,
     url: args.input.url,
