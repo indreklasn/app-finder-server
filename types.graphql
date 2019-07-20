@@ -1,5 +1,5 @@
 type Mutation {
-  addProduct(input: AddProductInput!): [Product]
+  addProduct(input: AddProductInput!): Product
   removeProduct(input: RemoveProductInput!): [Product]
 }
 

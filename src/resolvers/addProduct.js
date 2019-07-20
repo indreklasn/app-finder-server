@@ -10,8 +10,5 @@ export default async (parent, args) => {
     reputation: args.input.reputation,
     tags: args.input.tags
   })
-  const res=  await newProduct.save()
-  console.log(res)
-  return res
-
+  return await newProduct.save()
 }
