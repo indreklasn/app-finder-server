@@ -1,15 +1,17 @@
 import {Product} from './../models'
 
-export default (parent, args) => {
+export default async (parent, args) => {
+  console.log(args)
   const newProduct = new Product({
-    name: args.name,
-    url: args.url,
-    description: args.description,
-    logo: args.logo,
-    reputation: 0,
-    tags: args.tags
+    name: args.input.name,
+    url: args.input.url,
+    description: args.input.description,
+    logo: args.input.logo,
+    reputation: args.input.reputation,
+    tags: args.input.tags
   })
-  
-  return  Product.find({_id: newProduct._id})
+  const res=  await newProduct.save()
+  console.log(res)
+  return res
 
 }

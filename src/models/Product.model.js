@@ -7,12 +7,30 @@ const Schema = mongoose.Schema;
 */
 
 const ProductSchema = new Schema({
-	name: String,
-	url: String,
-	description: String,
-	logo: String,
-	reputation: Number,
-	tags: [String]
+	name: {
+		type: String,
+		required: true
+	},
+	url: {
+		type: String,
+		required: true
+	},
+	description: { 
+		type: String,
+		required: true
+	},
+	logo: {
+		type: String,
+		required: true
+	},
+	reputation: {
+		type: Number,
+		required: true
+	},
+	tags: {
+		type: [String],
+		required: false
+	}
 });
 
 export default mongoose.model('Product', ProductSchema);

@@ -1,3 +1,13 @@
+type Mutation {
+  addProduct(input: AddProductInput!): [Product]
+  removeProduct(input: RemoveProductInput!): [Product]
+}
+
+type Query {
+  products: [Product]
+  getProductById(id: ID!): [Product]
+}
+
 type Product {
   id: ID!
   name: String!
@@ -8,18 +18,15 @@ type Product {
   tags: [String]
 }
 
-type Query {
-  products: [Product]
-  getProductById(id: ID!): [Product]
+input AddProductInput {
+  name: String!
+  url: String!
+  description: String!
+  reputation: Float
+  logo: String!
+  tags: [String]
 }
 
-type Mutation {
-  addProduct(
-    name: String!
-    url: String!
-    description: String!
-    reputation: Float
-    logo: String!
-    tags: [String]
-  ): [Product]
+input RemoveProductInput {
+  id: ID!
 }
