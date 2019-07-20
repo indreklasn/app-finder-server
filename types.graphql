@@ -4,6 +4,7 @@ type Product {
   url: String!
   description: String!
   logo: String!
+  reputation: Float
   tags: [String]
 }
 
@@ -17,6 +18,7 @@ type Mutation {
     name: String!
     url: String!
     description: String!
+    reputation: Float
     logo: String!
     tags: [String]
   ): [Product]

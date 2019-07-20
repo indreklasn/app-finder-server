@@ -10,7 +10,8 @@ const ProductSchema = new Schema({
 	name: String,
 	url: String,
 	description: String,
-  logo: String,
+	logo: String,
+	reputation: Number,
 	tags: [String]
 });
 
