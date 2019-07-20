@@ -2,6 +2,8 @@ type Product {
   id: ID!
   name: String!
   url: String!
+  description: String!
+  logo: String!
   tags: [String]
 }
 
@@ -11,5 +13,11 @@ type Query {
 }
 
 type Mutation {
-  addProduct(name: String!, url: String!, tags: [String]): [Product]
+  addProduct(
+    name: String!
+    url: String!
+    description: String!
+    logo: String!
+    tags: [String]
+  ): [Product]
 }
