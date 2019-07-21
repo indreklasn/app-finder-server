@@ -8,6 +8,8 @@ type Query {
   products: [Product]
   getProductById(id: ID!): [Product]
   searchProduct(name: String, description: String, tags: [String]): [Product]
+  fetchUser(id: ID!): User
+  fetchAllUsers: [User]
 }
 
 type searchProduct {

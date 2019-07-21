@@ -3,7 +3,7 @@ import getProductById from './getProductById'
 import addProduct from './addProduct'
 import removeProduct from './removeProduct'
 import searchProduct from './searchProduct'
-import { createUser } from './user'
+import { createUser, fetchUser, fetchAllUsers } from './user'
 
 
 // Resolvers define the technique for fetching the types in the
@@ -12,7 +12,9 @@ const resolvers = {
   Query: {
     products,
     getProductById,
-    searchProduct
+    fetchAllUsers,
+    searchProduct,
+    fetchUser
   },
   Mutation: {
     addProduct,

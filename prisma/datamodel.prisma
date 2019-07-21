@@ -1,9 +1,9 @@
 type User {
+  name: String!
+  email: String!
   id: ID! @id
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
-  name: String!
-  email: String!
 }
 
 type Product {

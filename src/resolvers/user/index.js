@@ -1,3 +1,5 @@
-import createUser from './createUser'
+import createUser from './create'
+import fetchUser  from './fetchUser'
+import fetchAllUsers from './fetchAll'
 
-export { createUser }
+export { createUser, fetchUser, fetchAllUsers }

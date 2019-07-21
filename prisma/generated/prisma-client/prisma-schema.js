@@ -242,11 +242,11 @@ type Subscription {
 }
 
 type User {
+  name: String!
+  email: String!
   id: ID!
   createdAt: DateTime!
   updatedAt: DateTime!
-  name: String!
-  email: String!
 }
 
 type UserConnection {
@@ -256,9 +256,9 @@ type UserConnection {
 }
 
 input UserCreateInput {
-  id: ID
   name: String!
   email: String!
+  id: ID
 }
 
 type UserEdge {
@@ -267,24 +267,24 @@ type UserEdge {
 }
 
 enum UserOrderByInput {
+  name_ASC
+  name_DESC
+  email_ASC
+  email_DESC
   id_ASC
   id_DESC
   createdAt_ASC
   createdAt_DESC
   updatedAt_ASC
   updatedAt_DESC
-  name_ASC
-  name_DESC
-  email_ASC
-  email_DESC
 }
 
 type UserPreviousValues {
+  name: String!
+  email: String!
   id: ID!
   createdAt: DateTime!
   updatedAt: DateTime!
-  name: String!
-  email: String!
 }
 
 type UserSubscriptionPayload {
@@ -316,6 +316,34 @@ input UserUpdateManyMutationInput {
 }
 
 input UserWhereInput {
+  name: String
+  name_not: String
+  name_in: [String!]
+  name_not_in: [String!]
+  name_lt: String
+  name_lte: String
+  name_gt: String
+  name_gte: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  email: String
+  email_not: String
+  email_in: [String!]
+  email_not_in: [String!]
+  email_lt: String
+  email_lte: String
+  email_gt: String
+  email_gte: String
+  email_contains: String
+  email_not_contains: String
+  email_starts_with: String
+  email_not_starts_with: String
+  email_ends_with: String
+  email_not_ends_with: String
   id: ID
   id_not: ID
   id_in: [ID!]
@@ -346,34 +374,6 @@ input UserWhereInput {
   updatedAt_lte: DateTime
   updatedAt_gt: DateTime
   updatedAt_gte: DateTime
-  name: String
-  name_not: String
-  name_in: [String!]
-  name_not_in: [String!]
-  name_lt: String
-  name_lte: String
-  name_gt: String
-  name_gte: String
-  name_contains: String
-  name_not_contains: String
-  name_starts_with: String
-  name_not_starts_with: String
-  name_ends_with: String
-  name_not_ends_with: String
-  email: String
-  email_not: String
-  email_in: [String!]
-  email_not_in: [String!]
-  email_lt: String
-  email_lte: String
-  email_gt: String
-  email_gte: String
-  email_contains: String
-  email_not_contains: String
-  email_starts_with: String
-  email_not_starts_with: String
-  email_ends_with: String
-  email_not_ends_with: String
   AND: [UserWhereInput!]
   OR: [UserWhereInput!]
   NOT: [UserWhereInput!]
