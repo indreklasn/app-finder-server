@@ -1,6 +1,7 @@
 type Mutation {
   addProduct(input: AddProductInput!): Product
   removeProduct(input: RemoveProductInput!): RemoveProductOutput
+  createUser(name: String!): User
 }
 
 type Query {
@@ -40,4 +41,10 @@ input RemoveProductInput {
 
 type RemoveProductOutput {
   status: Float
+}
+
+type User {
+  id: ID!
+  email: String
+  name: String!
 }

@@ -3,6 +3,7 @@ import getProductById from './getProductById'
 import addProduct from './addProduct'
 import removeProduct from './removeProduct'
 import searchProduct from './searchProduct'
+import { createUser } from './user'
 
 
 // Resolvers define the technique for fetching the types in the
@@ -15,7 +16,8 @@ const resolvers = {
   },
   Mutation: {
     addProduct,
-    removeProduct
+    removeProduct,
+    createUser
   }
 };
 
