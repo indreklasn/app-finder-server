@@ -33,4 +33,10 @@ const ProductSchema = new Schema({
 	}
 });
 
+ProductSchema.index({'$**': 'text'});
+
+ProductSchema.on('index', err => {
+	console.log(err.message)
+})
+
 export default mongoose.model('Product', ProductSchema);

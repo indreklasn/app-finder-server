@@ -6,6 +6,13 @@ type Mutation {
 type Query {
   products: [Product]
   getProductById(id: ID!): [Product]
+  searchProduct(name: String, description: String, tags: [String]): [Product]
+}
+
+type searchProduct {
+  name: String
+  description: String
+  tags: [String]
 }
 
 type Product {
