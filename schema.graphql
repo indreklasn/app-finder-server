@@ -7,7 +7,7 @@ type Mutation {
     logo: String!
     tags: [String]
   ): Product
-  removeProduct(input: RemoveProductInput!): RemoveProductOutput
+  removeProduct(id: ID!): Product
   createUser(name: String!, email: String): User
 }
 
@@ -37,10 +37,6 @@ type Product {
 
 input RemoveProductInput {
   id: ID!
-}
-
-type RemoveProductOutput {
-  status: Float
 }
 
 type User {
