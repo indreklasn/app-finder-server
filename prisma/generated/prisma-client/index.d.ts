@@ -1012,6 +1012,10 @@ export const models: Model[] = [
     embedded: false
   },
   {
+    name: "Role",
+    embedded: false
+  },
+  {
     name: "Tag",
     embedded: false
   },
