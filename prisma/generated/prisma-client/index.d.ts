@@ -191,9 +191,7 @@ export type ProductOrderByInput =
   | "logo_ASC"
   | "logo_DESC"
   | "reputation_ASC"
-  | "reputation_DESC"
-  | "tags_ASC"
-  | "tags_DESC";
+  | "reputation_DESC";
 
 export type TagOrderByInput = "name_ASC" | "name_DESC" | "id_ASC" | "id_DESC";
 
@@ -294,20 +292,6 @@ export interface ProductWhereInput {
   reputation_lte?: Maybe<Float>;
   reputation_gt?: Maybe<Float>;
   reputation_gte?: Maybe<Float>;
-  tags?: Maybe<String>;
-  tags_not?: Maybe<String>;
-  tags_in?: Maybe<String[] | String>;
-  tags_not_in?: Maybe<String[] | String>;
-  tags_lt?: Maybe<String>;
-  tags_lte?: Maybe<String>;
-  tags_gt?: Maybe<String>;
-  tags_gte?: Maybe<String>;
-  tags_contains?: Maybe<String>;
-  tags_not_contains?: Maybe<String>;
-  tags_starts_with?: Maybe<String>;
-  tags_not_starts_with?: Maybe<String>;
-  tags_ends_with?: Maybe<String>;
-  tags_not_ends_with?: Maybe<String>;
   AND?: Maybe<ProductWhereInput[] | ProductWhereInput>;
   OR?: Maybe<ProductWhereInput[] | ProductWhereInput>;
   NOT?: Maybe<ProductWhereInput[] | ProductWhereInput>;
@@ -426,7 +410,11 @@ export interface ProductCreateInput {
   description: String;
   logo: String;
   reputation?: Maybe<Float>;
-  tags?: Maybe<String>;
+  tags?: Maybe<ProductCreatetagsInput>;
+}
+
+export interface ProductCreatetagsInput {
+  set?: Maybe<String[] | String>;
 }
 
 export interface ProductUpdateInput {
@@ -435,7 +423,11 @@ export interface ProductUpdateInput {
   description?: Maybe<String>;
   logo?: Maybe<String>;
   reputation?: Maybe<Float>;
-  tags?: Maybe<String>;
+  tags?: Maybe<ProductUpdatetagsInput>;
+}
+
+export interface ProductUpdatetagsInput {
+  set?: Maybe<String[] | String>;
 }
 
 export interface ProductUpdateManyMutationInput {
@@ -444,7 +436,7 @@ export interface ProductUpdateManyMutationInput {
   description?: Maybe<String>;
   logo?: Maybe<String>;
   reputation?: Maybe<Float>;
-  tags?: Maybe<String>;
+  tags?: Maybe<ProductUpdatetagsInput>;
 }
 
 export interface TagCreateInput {
@@ -520,7 +512,7 @@ export interface Product {
   description: String;
   logo: String;
   reputation?: Float;
-  tags?: String;
+  tags: String[];
 }
 
 export interface ProductPromise extends Promise<Product>, Fragmentable {
@@ -530,7 +522,7 @@ export interface ProductPromise extends Promise<Product>, Fragmentable {
   description: () => Promise<String>;
   logo: () => Promise<String>;
   reputation: () => Promise<Float>;
-  tags: () => Promise<String>;
+  tags: () => Promise<String[]>;
 }
 
 export interface ProductSubscription
@@ -542,7 +534,7 @@ export interface ProductSubscription
   description: () => Promise<AsyncIterator<String>>;
   logo: () => Promise<AsyncIterator<String>>;
   reputation: () => Promise<AsyncIterator<Float>>;
-  tags: () => Promise<AsyncIterator<String>>;
+  tags: () => Promise<AsyncIterator<String[]>>;
 }
 
 export interface ProductNullablePromise
@@ -554,7 +546,7 @@ export interface ProductNullablePromise
   description: () => Promise<String>;
   logo: () => Promise<String>;
   reputation: () => Promise<Float>;
-  tags: () => Promise<String>;
+  tags: () => Promise<String[]>;
 }
 
 export interface ProductConnection {
@@ -848,7 +840,7 @@ export interface ProductPreviousValues {
   description: String;
   logo: String;
   reputation?: Float;
-  tags?: String;
+  tags: String[];
 }
 
 export interface ProductPreviousValuesPromise
@@ -860,7 +852,7 @@ export interface ProductPreviousValuesPromise
   description: () => Promise<String>;
   logo: () => Promise<String>;
   reputation: () => Promise<Float>;
-  tags: () => Promise<String>;
+  tags: () => Promise<String[]>;
 }
 
 export interface ProductPreviousValuesSubscription
@@ -872,7 +864,7 @@ export interface ProductPreviousValuesSubscription
   description: () => Promise<AsyncIterator<String>>;
   logo: () => Promise<AsyncIterator<String>>;
   reputation: () => Promise<AsyncIterator<Float>>;
-  tags: () => Promise<AsyncIterator<String>>;
+  tags: () => Promise<AsyncIterator<String[]>>;
 }
 
 export interface TagSubscriptionPayload {
