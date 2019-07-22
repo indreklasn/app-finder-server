@@ -5,6 +5,7 @@ type Mutation {
     description: String!
     reputation: Float
     logo: String!
+    tags: [String]
   ): Product
   removeProduct(input: RemoveProductInput!): RemoveProductOutput
   createUser(name: String!, email: String): User

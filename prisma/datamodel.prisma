@@ -18,6 +18,7 @@ type Product {
   description: String!
   logo: String!
   reputation: Float
+  tags: [Tag!]
 }
 
 

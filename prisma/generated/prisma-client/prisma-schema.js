@@ -68,6 +68,7 @@ type Product {
   description: String!
   logo: String!
   reputation: Float
+  tags: String
 }
 
 type ProductConnection {
@@ -83,6 +84,7 @@ input ProductCreateInput {
   description: String!
   logo: String!
   reputation: Float
+  tags: String
 }
 
 type ProductEdge {
@@ -103,6 +105,8 @@ enum ProductOrderByInput {
   logo_DESC
   reputation_ASC
   reputation_DESC
+  tags_ASC
+  tags_DESC
 }
 
 type ProductPreviousValues {
@@ -112,6 +116,7 @@ type ProductPreviousValues {
   description: String!
   logo: String!
   reputation: Float
+  tags: String
 }
 
 type ProductSubscriptionPayload {
@@ -138,6 +143,7 @@ input ProductUpdateInput {
   description: String
   logo: String
   reputation: Float
+  tags: String
 }
 
 input ProductUpdateManyMutationInput {
@@ -146,6 +152,7 @@ input ProductUpdateManyMutationInput {
   description: String
   logo: String
   reputation: Float
+  tags: String
 }
 
 input ProductWhereInput {
@@ -227,6 +234,20 @@ input ProductWhereInput {
   reputation_lte: Float
   reputation_gt: Float
   reputation_gte: Float
+  tags: String
+  tags_not: String
+  tags_in: [String!]
+  tags_not_in: [String!]
+  tags_lt: String
+  tags_lte: String
+  tags_gt: String
+  tags_gte: String
+  tags_contains: String
+  tags_not_contains: String
+  tags_starts_with: String
+  tags_not_starts_with: String
+  tags_ends_with: String
+  tags_not_ends_with: String
   AND: [ProductWhereInput!]
   OR: [ProductWhereInput!]
   NOT: [ProductWhereInput!]
