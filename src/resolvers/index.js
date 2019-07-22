@@ -1,13 +1,6 @@
-import products from './products'
-import getProductById from './getProductById'
-import addProduct from './addProduct'
-import removeProduct from './removeProduct'
-import searchProduct from './searchProduct'
+import { products, getProductById, createProduct, removeProduct, searchProduct } from './product'
 import { createUser, fetchUser, fetchAllUsers } from './user'
 
-
-// Resolvers define the technique for fetching the types in the
-// schema.  We'll retrieve books from the "books" array above.
 const resolvers = {
   Query: {
     products,
@@ -17,7 +10,7 @@ const resolvers = {
     fetchUser
   },
   Mutation: {
-    addProduct,
+    createProduct,
     removeProduct,
     createUser
   }

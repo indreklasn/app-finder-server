@@ -1,7 +1,13 @@
 type Mutation {
-  addProduct(input: AddProductInput!): Product
+  createProduct(
+    name: String!
+    url: String!
+    description: String!
+    reputation: Float
+    logo: String!
+  ): Product
   removeProduct(input: RemoveProductInput!): RemoveProductOutput
-  createUser(name: String!): User
+  createUser(name: String!, email: String): User
 }
 
 type Query {
@@ -25,15 +31,6 @@ type Product {
   description: String!
   logo: String!
   reputation: Float
-  tags: [String]
-}
-
-input AddProductInput {
-  name: String!
-  url: String!
-  description: String!
-  reputation: Float
-  logo: String!
   tags: [String]
 }
 
