@@ -4,6 +4,12 @@ type User {
   id: ID! @id
   createdAt: DateTime! @createdAt
   updatedAt: DateTime! @updatedAt
+  role: Role! @default(value: "CUSTOMER")
+}
+
+enum Role {
+  ADMIN
+  CUSTOMER
 }
 
 type Tag {
