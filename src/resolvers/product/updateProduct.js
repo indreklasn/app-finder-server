@@ -9,7 +9,7 @@ export default (parent, args, context) => {
         set: args.tags
       }
     },
-    where:{
+    where: {
       id: args.id
     }
   })
