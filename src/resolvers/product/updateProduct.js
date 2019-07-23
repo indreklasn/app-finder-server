@@ -1,5 +1,4 @@
 export default (parent, args, context) => {
-  console.log(args)
   return context.prisma.updateProduct({
     data: {
       name: args.name,
