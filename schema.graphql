@@ -9,6 +9,15 @@ type Mutation {
   ): Product
   removeProduct(id: ID!): Product
   createUser(name: String!, email: String): User
+  updateProduct(
+    id: ID!
+    name: String
+    url: String
+    description: String
+    reputation: Float
+    logo: String
+    tags: [String]
+  ): Product
 }
 
 type Query {

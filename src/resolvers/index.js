@@ -1,4 +1,4 @@
-import { products, getProductById, createProduct, removeProduct, searchProduct } from './product'
+import { products, getProductById, createProduct, removeProduct, searchProduct, updateProduct } from './product'
 import { createUser, fetchUser, fetchAllUsers } from './user'
 
 const resolvers = {
@@ -12,6 +12,7 @@ const resolvers = {
   Mutation: {
     createProduct,
     removeProduct,
+    updateProduct,
     createUser
   }
 };

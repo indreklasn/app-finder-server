@@ -1,5 +1,4 @@
 export default (root, args, context) => {
-  console.log(args)
   return context.prisma.createProduct({
     name: args.name,
     description: args.description,
