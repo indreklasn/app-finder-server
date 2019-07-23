@@ -6,7 +6,8 @@ export default (parent, args, context) => {
       OR: [
         { name_contains: args.name },
         { description_contains: args.description },
-      ]
+      ],
     },
   })
+
 }

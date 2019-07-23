@@ -41,7 +41,7 @@ type Product {
   description: String!
   logo: String!
   reputation: Float
-  tags: [String]
+  tags: [String!]
 }
 
 input RemoveProductInput {
